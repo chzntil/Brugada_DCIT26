@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="styleto.css">
+    <link rel="stylesheet" href="mediaq.css">
+</head>
+<body>
+    <nav id="desktop-nav">
+        <div class ="logo"> Andrei Chad S. Brugada</div>
+    <div> 
+        <ul class="nav-links"> 
+            <li> <a href="#about-me"> About</a></li>
+            <li> <a href="#quizzes-and-exams"> Quiz and Activities</a></li>
+            <li> <a href="#lab-activities"> Lab Activities</a></li>
+    </ul>
+</div>
+    </nav>
+<nav id="hamburger-nav">                      
+    <div class ="logo"> Andrei Chad S. Brugada</div>
+    <div class="hamburger-menu">
+    <div class="hamburger-icon" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+ <div class="menu-links"> 
+            <li> <a href="#about-me" onclick="toggleMenu()"> About</a></li>
+            <li> <a href="#Quizzes-and-Exams" onclick="toggleMenu()"> Quiz</a></li>
+            <li> <a href="#Lab-Activities" onclick="toggleMenu()"> Lab Activities</a></li>
+ </div>
+</div> 
+</nav>
+
+<section id="profile">
+
+    <div class="section__pic-container">
+        <img src="andrei.png" alt="Andrei Chad S. Brugada Profile Picture" class="section__pic">
+    </div>
+    <div class="section__text"> 
+        <p class="section__text__p1">Hi, I'm </p>
+        <h1 class="title ">Andrei Chad S. Brugada</h1>
+        <p class ="section__text__p2">BSCS - 3C</p> 
+
+    <div class="socials-container"> 
+       <a href="https://mail.google.com/mail/?view=cm&fs=1&to=andreichad.brugada@cvsu.edu.ph" target="_blank" rel="noopener noreferrer">
+    <img src="gmail.png" alt="Email Logo" class="icon">
+</a>
+      <img src="instagram.png" 
+     alt="Instagram Logo" 
+     class="icon" 
+     onclick="window.open('https://instagram.com/cahdd1/', '_blank')" />
+     </div>
+
+     <a href="#about-me">
+    <img src="arrow.png" alt="Arrow Icon" class="icon arrow">
+</a>
+</section>
+
+<section id="about-me"> 
+
+    <p class="section__text__p1"> Get to know me better!</p>
+    <h1 class="title">About Me</h1>
+
+    <div class="section-container">
+
+
+    <div class ="section__pic-container">
+        <img    src="profile.jpg" 
+                alt="Andrei Chad S. Brugada Profile Picture" 
+                class="about-pic">
+        </div>
+
+<div class="about-details-container">
+
+    <div class="about-containers">
+
+        <div class="details-container"> 
+            <img 
+            src="user.png" 
+            alt="User Icon" 
+            class="icon">
+
+        <h3> Demographics </h3>
+        <p>Name: Andrei Chad S. Brugada</p>
+        <p>Age: 19</p>
+        <p>Address: Dasmariñas City, Cavite</p>
+     </div>
+
+     <div class="details-container">
+        <img 
+            src="education.png" 
+            alt="Education Icon" 
+            class="icon">
+
+        <h3> Education </h3>
+
+        <p> 3rd Year B.S. in Computer Science</p>
+        <p> Cavite State University-Silang Campus</p>
+    
+    </div>
+</div>
+<div class="text-container">
+    <p> I am Andrei a third-year Computer Science student at Cavite State University-Silang Campus. I have a strong passion for technology and programming, and I am constantly seeking opportunities to enhance my skills and knowledge in the field. I am eager to contribute to innovative projects and collaborate with like-minded individuals to create impactful solutions. </p>
+</div>
+<a href="#quiz-and-activities">
+    <img src="arrow.png" alt="Arrow Icon" class="icon arrow">
+</a>
+</div>
+</div>
+</section>
+
+<section id="quiz-and-activities"> 
+    <p class="section__text__p1"> Written works</p>
+    <h1 class="title"> Quizzes and Activities</h1>
+    <div class="quiz-activities-details-container">
+        <div class="about-containers">
+        <div class="details-container">
+            <h2 class="quiz-sub-title">Quizzes</h2>
+            <p> No quiz available yet.</p>
+        </div>
+
+         <div class="details-container">
+            <h2 class="quiz-sub-title">Activities</h2>
+            <p> No activities available yet.</p>
+        </div>
+       <a href="#lab-activity">
+    <img src="arrow.png" alt="Arrow Icon" class="icon arrow">
+</a>
+</section>
+
+<section id="lab-activity">
+<p class="section__text__p1"> Laboratory Activities</p>
+<h1 class="title">Lab Activities </h1>
+<div class="lab-activity-details-container"> 
+    <div class="details-container color - container"> 
+        <p> No available lab activities yet.</p>
+    </div>
+</div>
+</section>
+<script src="functionsto.js"></script>
+</body>
+</html> 
