@@ -306,9 +306,14 @@ position:relative;
 }
 
 .quiz-pic{ 
+        width: 300px !important;
+    height: 300px !important;
+    max-width: 300px !important;
+    max-height: 300px !important;
+    object-fit: cover;
     border-radius: 2rem;
-    height: 300px;
-    width: 300px;
+    cursor: pointer;
+
 }
 
 /* Makes the quiz image clickable */
