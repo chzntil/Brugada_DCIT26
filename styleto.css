@@ -292,7 +292,7 @@ position:relative;
 
 .about-container { 
     display: flex;
-    gap: 2rem;
+    gap: 5rem;
     width: 80%;
 }
 
@@ -302,4 +302,17 @@ position:relative;
     border: 1px solid rgb(163,163,163);
     border-radius: 2rem;
     text-align: center;
+
 }
+
+.quiz-pic{ 
+    border-radius: 2rem;
+    height: 300px;
+    width: 300px;
+}
+
+/* Makes the quiz image clickable */
+.quiz-pic {
+    cursor: pointer;
+}
+
