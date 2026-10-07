@@ -9,32 +9,34 @@
 </head>
 <body>
     <nav id="desktop-nav">
-        <div class ="logo"> Andrei Chad S. Brugada</div>
-    <div> 
-        <ul class="nav-links"> 
-            <li> <a href="#about-me"> About</a></li>
-            <li> <a href="#quiz-and-activities"> Quiz and Activities</a></li>
-            <li> <a href="#lab-activity"> Lab Activities</a></li>
-    </ul>
-</div>
-    </nav>
-<nav id="hamburger-nav">                      
-    <div class ="logo"> Andrei Chad S. Brugada</div>
-    <div class="hamburger-menu">
-    <div class="hamburger-icon" onclick="toggleMenu()">
-        <span></span>
-        <span></span>
-        <span></span>
-    </div>
- <div class="menu-links"> 
-    <ul>
-            <li> <a href="#about-me" onclick="toggleMenu()"> About</a></li>
-            <li> <a href="#quiz-and-activities" onclick="toggleMenu()"> Quiz</a></li>
-            <li> <a href="#lab-activity" onclick="toggleMenu()"> Lab Activities</a></li>
-</ul>
+        <div class="logo">Andrei Chad S. Brugada</div>
+        <div>
+            <ul class="nav-links">
+                <li><a href="#about-me">About</a></li>
+                <li><a href="#quiz-and-activities">Quiz and Activities</a></li>
+                <li><a href="#lab-activity">Lab Activities</a></li>
+                <li><a href="#exams">Exams</a></li>
+            </ul>
         </div>
-</div> 
-</nav>
+    </nav>
+    <nav id="hamburger-nav">
+        <div class="logo">Andrei Chad S. Brugada</div>
+        <div class="hamburger-menu">
+            <div class="hamburger-icon" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class="menu-links">
+                <ul>
+                    <li><a href="#about-me" onclick="toggleMenu()">About</a></li>
+                    <li><a href="#quiz-and-activities" onclick="toggleMenu()">Quiz</a></li>
+                    <li><a href="#lab-activity" onclick="toggleMenu()">Lab Activities</a></li>
+                    <li><a href="#exams" onclick="toggleMenu()">Exams</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
 <section id="profile">
 
@@ -49,6 +51,9 @@
     <div class="socials-container"> 
        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=andreichad.brugada@cvsu.edu.ph" target="_blank" rel="noopener noreferrer">
     <img src="gmail.png" alt="Email Logo" class="icon">
+       </div> 
+
+
 </a>
       <img src="instagram.png" 
      alt="Instagram Logo" 
@@ -59,6 +64,7 @@
      <a href="#about-me">
     <img src="arrow.png" alt="Arrow Icon" class="icon arrow">
 </a>
+</div>
 </section>
 
 <section id="about-me"> 
@@ -87,7 +93,7 @@
 
         <h3> Demographics </h3>
         <p>Name: Andrei Chad S. Brugada</p>
-        <p>Age: 19</p>
+        <p>Age: 20</p>
         <p>Address: Dasmariñas City, Cavite</p>
      </div>
 
@@ -105,7 +111,7 @@
     </div>
 </div>
 <div class="text-container">
-    <p> I am Andrei a third-year Computer Science student at Cavite State University-Silang Campus. I have a strong passion for technology and programming, and I am constantly seeking opportunities to enhance my skills and knowledge in the field. I am eager to contribute to innovative projects and collaborate with like-minded individuals to create impactful solutions. </p>
+    <p style="text-align: justify;"> I am Andrei a third-year Computer Science student at Cavite State University-Silang Campus. I have a strong passion for technology and programming, and I am constantly seeking opportunities to enhance my skills and knowledge in the field. I am eager to contribute to innovative projects and collaborate with like-minded individuals to create impactful solutions. </p>
 </div>
 <a href="#quiz-and-activities">
     <img src="arrow.png" alt="Arrow Icon" class="icon arrow">
@@ -119,36 +125,25 @@
     <h1 class="title"> Quizzes and Activities</h1>
     <div class="quiz-activities-details-container">
         <div class="about-containers">
-        <div class="details-container">
-            <h2 class="quiz-sub-title">Quizzes</h2>
+            <div class="details-container">
+                <h2 class="quiz-sub-title">Quizzes</h2>
 
-             <a href="quiz_1.jpg" target="_blank">
-    <img 
-        src="quiz_1.jpg" 
-        alt="Quiz #1 front page" 
-        class="quiz-pic"
-    >
-</a>
-            <a href="quiz1.jpg" target="_blank">
-    <img 
-        src="quiz1.jpg" 
-        alt="Quiz #1 back page" 
-        class="quiz-pic"
-    >
-</a>
-     
+                <div class="stacked-gallery" data-images="quiz_1.jpg,quiz1.jpg" data-title="Quiz #1" aria-label="Open quiz gallery">
+                    <img src="quiz_1.jpg" alt="Quiz #1 front page" class="gallery-photo gallery-photo-back">
+                    <img src="quiz1.jpg" alt="Quiz #1 back page" class="gallery-photo gallery-photo-front">
+                </div>
 
-<p>Quiz #1</p>
-        </div>
-
-         <div class="details-container">
-            <h2 class="quiz-sub-title">Activities</h2>
+                <p>Quiz #1</p>
             </div>
+
+            <div class="details-container">
+                <h2 class="quiz-sub-title">Activities</h2>
             </div>
         </div>
-       <a href="#lab-activity">
-    <img src="arrow.png" alt="Arrow Icon" class="icon arrow">
-</a>
+    </div>
+    <a href="#lab-activity">
+        <img src="arrow.png" alt="Arrow Icon" class="icon arrow">
+    </a>
 </section>
 
 <section id="lab-activity">
@@ -160,6 +155,29 @@
     </div>
 </div>
 </section>
+
+<section id="exams">
+    <h1 class="title">Exams</h1>
+    <div class="exam-details-container">
+        <div class="details-container">
+            <div class="stacked-gallery" data-images="midterms.jpeg" data-title="Midterms" aria-label="Open midterms gallery">
+                <img src="midterms.jpeg" alt="Midterms exam" class="gallery-photo gallery-photo-single">
+            </div>
+
+            <p>Midterms</p>
+        </div>
+    </div>
+</section>
+
+<div class="gallery-modal" id="galleryModal" aria-hidden="true">
+    <div class="gallery-modal-content">
+        <button class="gallery-close" aria-label="Close image viewer">&times;</button>
+        <button class="gallery-nav gallery-prev" aria-label="Previous image">&#10094;</button>
+        <img class="gallery-modal-image" src="" alt="">
+        <button class="gallery-nav gallery-next" aria-label="Next image">&#10095;</button>
+    </div>
+</div>
+
 <script src="functionsto.js"></script>
 </body>
 </html> 

@@ -13,10 +13,20 @@ body{
 }
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 100px;
+}
+
+body {
+    padding-top: 0;
 }
 
 p {
     color: rgb(85, 85, 85);
+  
+}
+
+section {
+    scroll-margin-top: 100px;
 }
 
 /* TRANSITION */
@@ -35,6 +45,12 @@ nav {
     justify-content: space-around;
     align-items: center;
     height: 17vh;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: rgba(255, 255, 255, 0.96);
+    backdrop-filter: blur(8px);
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
 }
 
 .nav-links {
@@ -68,6 +84,11 @@ a:hover {
 
 #hamburger-nav {    
     display: none;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: rgba(255, 255, 255, 0.96);
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
 }
 
 .hamburger-menu{ 
@@ -89,6 +110,7 @@ a:hover {
     height: 2px;
     background-color: black;
     transition: all 0.3s ease-in-out;
+    transform-origin: left center; /* FIXED: Added origin alignment for clean X rotation */
 }
 
 .menu-links { 
@@ -100,6 +122,13 @@ a:hover {
     max-height: 0;
     overflow: hidden;
     transition: all 0.3s ease-in-out; 
+}
+
+.menu-links ul {
+    display: flex;
+    flex-direction: column; /* FIXED: Changed row to column for a proper vertical drop-down list */
+    gap: 0.5rem;
+    padding: 10px;
 }
 
 .menu-links a {
@@ -117,11 +146,11 @@ a:hover {
 }
 
 .menu-links.open {
-    max-height: 300px; 
+    max-height: 300px; /* FIXED: Removed the secondary duplicate block directly underneath */
 }
 
 .hamburger-icon.open span:first-child {
-    transform: rotate(45deg) translate(10px, 5px);
+    transform: rotate(45deg) translate(5px, 5px);
 }
 
 .hamburger-icon.open span:nth-child(2) {
@@ -129,27 +158,16 @@ a:hover {
 }
 
 .hamburger-icon.open span:last-child {
-    transform: rotate(-45deg) translate(10px, -5px);
+    transform: rotate(-45deg) translate(5px, -5px);
 }
-
-.hamburger-icon span:first-child { 
-    transform:none;
-}
-.hamburger-icon span:first-child { 
-    opacity: 1;
-}
-.hamburger-icon span:first-child { 
-    transform:none;
-}
-
 /* SECTIONS */ 
 
 section { 
     padding-top: 4vh; 
-    height: 96vh;
-    margin: 0 5rem; 
+    min-height: 70vh;
+    height: auto;
+    margin: 0 4rem; 
     box-sizing: border-box;
-    min-height: fit-content;
 }
 
 .section__pic {
@@ -191,6 +209,7 @@ section {
 
 .section__text__p1 { 
     text-align: center;
+    margin-bottom: 0.5rem;
 }
 
 .section__text__p2 { 
@@ -200,8 +219,9 @@ section {
 }
 
 .title { 
-    font-size: 3rem;
+    font-size: clamp(2.3rem, 4vw, 4rem);
     text-align: center;
+    margin-bottom: 1.5rem;
 }
 
 .socials-container { 
@@ -225,14 +245,17 @@ section {
 }
 
 .about-containers { 
-gap: 2rem;
-margin-bottom:2rem;
-margin-top: 2rem;
+    gap: 2rem;
+    margin-bottom: 2rem;
+    margin-top: 2rem;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .about-details-container{ 
     justify-content: center;
     flex-direction: column;
+    width: min(100%, 620px);
 }
 
 .about-containers,
@@ -246,7 +269,8 @@ margin-top: 2rem;
 
 .details-container { 
     padding: 1.5rem; 
-    flex: 1;
+    flex: 1 1 260px;
+    min-width: 260px;
     background: white;
     border-radius: 2rem;
     border: rgb(53, 53, 53) 0.1rem solid;
@@ -254,9 +278,18 @@ margin-top: 2rem;
     text-align: center;
 }
 
+.text-container {
+    max-width: 620px;
+    width: 100%;
+    margin: 0 auto;
+}
+
 .section-container { 
     gap: 4rem;
-    height: 80%;
+    min-height: 60vh;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
 .section__pic-container { 
@@ -274,7 +307,8 @@ margin-top: 2rem;
 /* QUIZ AND ACTIVITIES*/ 
 
 #quiz-and-activities {
-position:relative; 
+    position: relative;
+    min-height: 60vh;
 }
 
 .quiz-sub-title { 
@@ -288,12 +322,18 @@ position:relative;
     display: flex;
     justify-content: center;
     flex-direction: column;
+    align-items: center;
 }
 
 .about-container { 
     display: flex;
     gap: 5rem;
     width: 80%;
+}
+
+#lab-activity,
+#exams {
+    min-height: 45vh;
 }
 
 .details-containers{ 
@@ -306,14 +346,131 @@ position:relative;
 }
 
 .quiz-pic{ 
-        width: 300px !important;
-    height: 300px !important;
-    max-width: 300px !important;
-    max-height: 300px !important;
+    border-radius: 2rem;
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    cursor: pointer;
+}
+
+.stacked-gallery {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    margin: 0 auto 1rem;
+    cursor: pointer;
+}
+
+#exams .details-container,
+#lab-activity .details-container {
+    width: min(100%, 420px);
+    margin: 0 auto;
+}
+
+.gallery-photo {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
     object-fit: cover;
     border-radius: 2rem;
-    cursor: pointer;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.18);
+    border: 2px solid rgba(255, 255, 255, 0.7);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
 
+.gallery-photo-back {
+    transform: rotate(-6deg) translate(-12px, 12px);
+    z-index: 1;
+}
+
+.gallery-photo-front {
+    transform: rotate(6deg) translate(12px, -10px);
+    z-index: 2;
+}
+
+.gallery-photo-single {
+    transform: none;
+    z-index: 2;
+}
+
+.stacked-gallery:hover .gallery-photo {
+    box-shadow: 0 12px 26px rgba(0, 0, 0, 0.22);
+}
+
+.gallery-modal {
+    position: fixed;
+    inset: 0;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 1000;
+    padding: 1rem;
+}
+
+.gallery-modal.open {
+    display: flex;
+}
+
+.gallery-modal-content {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 90vw;
+    max-height: 90vh;
+}
+
+.gallery-modal-image {
+    width: min(80vw, 700px);
+    max-height: 80vh;
+    object-fit: contain;
+    border-radius: 1rem;
+    background: #fff;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
+}
+
+.gallery-close,
+.gallery-nav {
+    position: absolute;
+    border: none;
+    background: rgba(255, 255, 255, 0.9);
+    color: #111;
+    border-radius: 50%;
+    width: 42px;
+    height: 42px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s ease;
+}
+
+.gallery-close {
+    top: -18px;
+    right: -18px;
+}
+
+.gallery-nav {
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.gallery-prev {
+    left: -18px;
+}
+
+.gallery-next {
+    right: -18px;
+}
+
+.gallery-close:hover,
+.gallery-nav:hover {
+    transform: scale(1.05);
+}
+
+.gallery-modal-content .gallery-nav.hidden {
+    display: none;
 }
 
 /* Makes the quiz image clickable */
